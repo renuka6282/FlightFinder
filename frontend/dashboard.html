@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">AirEase</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="flights.html">Flights</a></li>
+      <li><a href="bookings.html">Bookings</a></li>
+      <li><a href="newflights.html">New Flights</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+    <div class="auth-buttons">
+      <a href="login.html"><button>Login</button></a>
+      <a href="signup.html"><button>Sign Up</button></a>
+    </div>
+  </nav>
+
+  <h2 class="heading">Admin Dashboard</h2>
+
+  <div class="dashboard-cards">
+    <div class="card" id="total-flights">
+      <h3>Total Flights</h3>
+      <p>--</p>
+    </div>
+    <div class="card" id="total-bookings">
+      <h3>Total Bookings</h3>
+      <p>--</p>
+    </div>
+    <div class="card" id="users-logged-in">
+      <h3>Users Logged In</h3>
+      <p>--</p>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

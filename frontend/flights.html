@@ -3,24 +3,20 @@
 <head>
   <meta charset="UTF-8" >
   <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-  <title>Flight Search</title>
+  <title>Available Flights</title>
   <link rel="stylesheet" href="style.css" >
 </head>
 <body>
   <nav class="navbar">
     <div class="logo">
-      <img src="https://cdn-icons-png.flaticon.com/512/681/681494.png" alt="Flight Logo" style="height: 30px; vertical-align: middle; margin-right: 8px;">
       AirEase
     </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="flights.html">Flights</a></li> 
+      <li><a href="flights.html">Flights</a></li>
       <li><a href="bookings.html">Bookings</a></li>
       <li><a href="newflights.html">New Flights</a></li>
       <li><a href="dashboard.html">Dashboard</a></li>
-      <li><a href="help.html">Help</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="auth-buttons">
       <a href="login.html"><button>Login</button></a>
@@ -38,7 +34,7 @@
   <section class="cards-section">
     <h2>Available Flights</h2>
     <div class="cards-container" id="flightsContainer">
-      <!-- Dynamic flights will be inserted here -->
+      <!-- Flights will load here -->
     </div>
   </section>
 
@@ -46,7 +42,6 @@
     <p>&copy; 2025 AirEase. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript logic -->
   <script>
     const flights = [
       {
@@ -81,7 +76,7 @@
     const flightsContainer = document.getElementById("flightsContainer");
 
     function displayFlights(filteredFlights) {
-      flightsContainer.innerHTML = ""; // Clear previous results
+      flightsContainer.innerHTML = "";
 
       if (filteredFlights.length === 0) {
         flightsContainer.innerHTML = "<p>No flights found.</p>";
@@ -95,7 +90,7 @@
         card.innerHTML = `
           <div class="card-header">
             <h3>${flight.airline} ${flight.flightNo}</h3>
-            <span>₹${flight.price.toLocaleString()}</span>
+            <span>₹${flight.price}</span>
           </div>
           <p>${flight.from} → ${flight.to}</p>
           <p>${flight.time}</p>
@@ -107,18 +102,17 @@
     }
 
     searchBtn.addEventListener("click", () => {
-      const fromValue = fromInput.value.trim().toLowerCase();
-      const toValue = toInput.value.trim().toLowerCase();
+      const fromVal = fromInput.value.trim().toLowerCase();
+      const toVal = toInput.value.trim().toLowerCase();
 
       const filtered = flights.filter(flight =>
-        flight.from.toLowerCase().includes(fromValue) &&
-        flight.to.toLowerCase().includes(toValue)
+        flight.from.toLowerCase().includes(fromVal) &&
+        flight.to.toLowerCase().includes(toVal)
       );
 
       displayFlights(filtered);
     });
 
-    // Show all flights on initial load
     displayFlights(flights);
   </script>
 </body>
