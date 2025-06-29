@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Add New Flight</title>
-  <link rel="stylesheet" href="newflights.css">
+  <title>Add New Flight - AirEase</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
-  <nav class="navbar">
-    <div class="logo">AirEase</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="flights.html">Flights</a></li>
-      <li><a href="bookings.html">Bookings</a></li>
-      <li><a href="newflights.html">New Flights</a></li>
-      <li><a href="dashboard.html">Dashboard</a></li>
-    </ul>
-    <div class="auth-buttons">
-      <a href="login.html"><button>Login</button></a>
-      <a href="signup.html"><button>Sign Up</button></a>
+
+  <div id="navbar"></div>
+
+  <main>
+    <div class="form-container">
+      <h2>Add New Flight</h2>
+      <form onsubmit="return addFlight()">
+        <input type="text" id="flightName" placeholder="Flight Name" required>
+        <input type="text" id="from" placeholder="From" required>
+        <input type="text" id="to" placeholder="To" required>
+        <input type="text" id="time" placeholder="Time (e.g., 10:00 AM - 12:00 PM)" required>
+        <input type="text" id="price" placeholder="Price (e.g., ₹4500)" required>
+        <button type="submit">Add Flight</button>
+      </form>
+      <p id="success-message"></p>
     </div>
-  </nav>
-  <div class="form-container">
-    <h2>Add New Flight</h2>
-    <form onsubmit="return addFlight()">
-      <input type="text" id="flightName" placeholder="Flight Name" required>
-      <input type="text" id="from" placeholder="From" required>
-      <input type="text" id="to" placeholder="To" required>
-      <input type="text" id="time" placeholder="Time (e.g., 10:00 AM - 12:00 PM)" required>
-      <input type="text" id="price" placeholder="Price (e.g., ₹4500)" required>
-      <button type="submit">Add Flight</button>
-    </form>
-    <p id="success-message"></p>
-  </div>
-  <script src="newflights.js"></script>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 AirEase. All rights reserved.</p>
+  </footer>
+
+  <script src="js/newflights.js"></script>
+  <script src="js/navbar.js"></script>
+
 </body>
+
 </html>
