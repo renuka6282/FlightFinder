@@ -9,4 +9,9 @@ FlightFinder is a web application that helps users search and explore flight opt
 ## Tech Stack
 - Frontend: HTML, CSS, JavaScript  
 - Backend: Node.js, Express.js
-- Database: Not used  
+- Database: Not used
+
+## Contributors
+- Renuka Devi(ME) - Frontend Development
+- Vyshnavi - Backend Development
+
